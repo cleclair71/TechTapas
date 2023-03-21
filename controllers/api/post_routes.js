@@ -6,17 +6,20 @@ const sequelize = require('../../config/connection');
 // GET all users
 router.get('/', (req, res) => {
     User.findAll({
-        attributes: { exclude: ['password'],
+        attributes: { exclude: ['password'] }, // add closing bracket here
         order: [['created_at', 'DESC']],
         include: [
             {
                 model: Comment,
-                attributes: ['id', 'comment_text', 'created_at', 'post_id', 'user_id'],
+                attributes: ['id', 'comment_text', 'created_at', 'post_id', 'user_id'], 
+                include: {
+                    model: User,
+                    attributes: ['username']
+                }
             },
             {
                 model: User,
                 attributes: ['username'],
-            }
             },
         ]
     })
@@ -25,8 +28,7 @@ router.get('/', (req, res) => {
             console.log(err);
             res.status(500).json(err);
         });
-}
-);
+});
 
 // GET one user
 

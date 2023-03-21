@@ -1,0 +1,51 @@
+<div class="card mb-6">
+  <header class="card-header card-header-title has-background-grey-lighter">
+    <div class="columns is-gapless">
+      <div class="column">
+        <p class="has-text-primary-light"></p>
+        <a href="/post/{{id}}" class="has-text-black is-capitalized">{{title}}</a>
+      </div>
+      <div class="column">
+        <span class="tag is-pulled-right">{{category.category_name}}</span>
+      </div>
+    </div>
+  </header>
+  <div class="card-content">
+    <div class="content has-text-justified">
+      {{post_content}}
+    </div>
+    <div class="is-flex is-justify-content-space-between">
+      <div class="is-flex">
+        <figure class="image is-48x48 mr-2">
+          <img src="{{user.avatar}}" alt="{{user.username}}'s Avatar">
+        </figure>
+        <div>
+          <p class="is-size-5">{{user.username}}</p>
+          <div class="field is-grouped is-grouped-multiline">
+            <div class="control">
+              <div class="tags has-addons">
+                <span class="tag is-dark">Votes</span>
+                <span class="tag is-success">{{votes}}</span>
+              </div>
+            </div>
+            <div class="control">
+              <div class="tags has-addons">
+                <span class="tag is-dark">Views</span>
+                <span class="tag is-info">{{views}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="is-size-7 has-text-grey">{{format_date created_at}}</p>
+        <a href="/post/{{id}}" class="button is-link is-small">
+          <span class="icon">
+            <i class="fas fa-comment"></i>
+          </span>
+          <span>{{comments.length}} {{format_plural "Comment" comments.length}}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
