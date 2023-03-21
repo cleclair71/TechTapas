@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="p-5 my-4 bg-light rounded-3">
+        <h1>Sign Up</h1>
+        <div class="m-4">
+          <form action="/signup" class="needs-validation" method="post" novalidate>
+            <div class="mb-3">
+              <label class="form-label" for="inputUsername">Username</label>
+              <input type="text" class="form-control" id="inputUsername" name="username" placeholder="Username" required>
+              <div class="invalid-feedback">Please enter a valid username.</div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="inputEmail">Email</label>
+              <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email" required>
+              <div class="invalid-feedback">Please enter a valid email address.</div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="inputPassword">Password</label>
+              <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Password" required>
+              <div class="invalid-feedback">Please enter your password to continue.</div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="inputConfirmPassword">Confirm Password</label>
+              <input type="password" class="form-control" id="inputConfirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+              <div class="invalid-feedback">Please confirm your password.</div>
+            </div>
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <video src="path/to/video.mp4" autoplay loop class="img-fluid"></video>
+    </div>
+  </div>
+</div>
