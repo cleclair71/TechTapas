@@ -7,8 +7,12 @@ router.use('/api', apiRoutes);
 router.use('/', homeRoutes);
 router.use('/dashboard', dashboardRoutes);
 
+router.get('/', (req, res) => {
+  res.render('homepage');
+});
+
 router.use((req, res) => {
-    res.status(404).end();
-    });
+  res.status(404).end();
+});
 
 module.exports = router;
