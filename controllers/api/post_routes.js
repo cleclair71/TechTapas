@@ -72,7 +72,4 @@ router.get('/:id', (req, res) => {
 );
 
 // POST one user
-router.post('/', (req, res) => {
-    Post.create({
-        title: req.body.title,
-        post_content: req.body.post_content,)
+router
