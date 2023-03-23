@@ -1,13 +1,14 @@
 {{> post-info post}}
 
 {{#if loggedIn}}
-<form class="comment-form mt-5">
+<form class="comment-form mt-5 singlePost">
   <div class="form-group">
     <textarea class="form-control" name="comment-body" placeholder="Write a comment"></textarea>
   </div>
 
   <div class="form-group">
-    <button class="btn btn-warning" type="submit">Add Comment</button>
+    <br>
+    <button class="btn btn-primary" type="submit">Add Comment</button>
   </div>
   
 </form>
