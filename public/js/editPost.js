@@ -6,18 +6,30 @@ async function editPost(event) {
     const id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
     ];
-    if (title && content) {
-        const response = await fetch(`/api/posts/${id}`, {
+  await fetch(`/api/posts/${id}`, {
             method: 'PUT',
             body: JSON.stringify({ title, content }),
             headers: { 'Content-Type': 'application/json' }
         });
-        if (response.ok) {
-            document.location.replace('/dashboard');
-        } else {
-            alert(response.statusText);
-        }
-    }
-}
 
+        document.location.replace('/dashboard');
+        }
+
+        async function deletePost() {
+        
+            const id = window.location.toString().split('/')[
+                window.location.toString().split('/').length - 1
+              ];
+        
+            await fetch(`/api/posts/${id}`, {
+                method: 'DELETE',
+               
+            });
+            document.location.replace('/dashboard');
+        }
+        
+        document.querySelectorAll('.delete-post-btn').forEach((btn) => {
+            btn.addEventListener('click', deletePost);
+        });
+        
 document.querySelector('.edit-post-form').addEventListener('submit', editPost);
