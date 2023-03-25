@@ -1,20 +1,24 @@
   ![GitHub license](https://img.shields.io/badge/license-MIT-pink.svg)
-  ![repo size](https://img.shields.io/github/repo-size/cleclair71/hr-hub?color=yellow)
-  ![commits](https://img.shields.io/github/commit-activity/m/cleclair71/hr-hub/main)
-  ![language](https://img.shields.io/github/languages/top/cleclair71/hr-hub)
-  ![console.table](https://img.shields.io/github/package-json/dependency-version/cleclair71/hr-hub/console.table)
-  ![inquirer](https://img.shields.io/github/package-json/dependency-version/cleclair71/hr-hub/inquirer?color=lime)
-  ![mysql2](https://img.shields.io/github/package-json/dependency-version/cleclair71/hr-hub/mysql2?color=orange)
+  ![repo size](https://img.shields.io/github/repo-size/cleclair71/TechTapas?color=yellow)
+  ![commits](https://img.shields.io/github/commit-activity/m/cleclair71/TechTapas/main)
+  ![language](https://img.shields.io/github/languages/top/cleclair71/TechTapas)
+  ![bcrypt](https://img.shields.io/github/package-json/dependency-version/cleclair71/TechTapas/bcrypt)
+  ![sequelize](https://img.shields.io/github/package-json/dependency-version/cleclair71/TechTapas/sequelize?color=lime)
+  ![mysql2](https://img.shields.io/github/package-json/dependency-version/cleclair71/TechTapas/mysql2?color=orange)
+  ![dotenv](https://img.shields.io/github/package-json/dependency-version/cleclair71/TechTapas/dotenv?color=blue)
+  ![express](https://img.shields.io/github/package-json/dependency-version/cleclair71/TechTapas/express?color=lime)
+    ![express-handlebars](https://img.shields.io/github/package-json/dependency-version/cleclair71/TechTapas/express-handlebars?color=orange)
+    
 
   <a name="readme-top"></a>
  <br />
  <div align="center">
  <h1 align="center">TechTapas</h1>
-    <a href="https://github.com/cleclair71/hr-hub">
-     <img src="/assets/img/hrhub.jpg" alt="Logo" height="200">
+    <a href="https://github.com/cleclair71/TechTapas">
+     <img src="public/assets/techtapas.jpg" alt="Logo" height="200">
    </a>
     <p align="center">
-      Your ultimate employee management solution
+      Snackable Content for Techies on the Go
     </p>
   
 <br />
@@ -47,15 +51,7 @@
   <img src="assets\Capture.JPG"/>
 </p>
 
-Welcome to our business management tool HR Hub! This application has been designed to help you organize and plan your business by providing you with a comprehensive view of your departments, roles, and employees.
-
-Our command-line application accepts user input and provides you with the following options: view all departments, view all roles, view all employees, add a department, add a role, add an employee, and update an employee role.
-
-When you choose to view all departments, you will be presented with a formatted table showing department names and department ids. If you choose to view all roles, you will see the job title, role id, the department that role belongs to, and the salary for that role. Similarly, when you choose to view all employees, you will be presented with a formatted table showing employee data, including employee ids, first names, last names, job titles, departments, salaries, and managers that the employees report to.
-
-Our application also allows you to add new departments, roles, and employees to the database. When you choose to add a department, you will be prompted to enter the name of the department and that department will be added to the database. Similarly, when you choose to add a role, you will be prompted to enter the name, salary, and department for the role, and that role will be added to the database. Finally, when you choose to add an employee, you will be prompted to enter the employee's first name, last name, role, and manager, and that employee will be added to the database.
-
-Last but not least, our application also allows you to update an employee's role. When you choose to update an employee role, you will be prompted to select an employee to update and their new role. This information will then be updated in the database.
+Welcome to TechTapas, a CMS-style blog site where developers can publish their thoughts and opinions on technical concepts, recent advancements, and new technologies. This site is built using the MVC paradigm in its architectural structure, using Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -79,25 +75,38 @@ Last but not least, our application also allows you to update an employee's role
 1. Clone the repository 
 
 ```bash
-git clone https://github.com/cleclair71/hr-hub.git
+git clone https://github.com/cleclair71/TechTapas.git
 ```
 2. Change the Working Directory
 
 ```bash
-cd hr-hub
+cd TechTapas
 ```
-3. Install [`inquirer`](https://www.npmjs.com/package/inquirer), [`figlet`](https://www.npmjs.com/search?q=figlet), [`dotenv`](https://www.npmjs.com/package/dotenv), [`mysql2`](https://www.npmjs.com/package/mysql2), [`chalk`](https://www.npmjs.com/package/chalk) and [`console.table`](https://www.npmjs.com/package/console.table)
+3. Install [`sequelize`](https://www.npmjs.com/package/inquirer), [`figlet`](https://www.npmjs.com/search?q=figlet), [`dotenv`](https://www.npmjs.com/package/dotenv), [`mysql2`](https://www.npmjs.com/package/mysql2), [`handlebars`](https://www.npmjs.com/package/handlebars) and [`express`](https://www.npmjs.com/package/console.table)
 
 ```bash
 npm i
 ```
-4. Run the App
+
+4. Create a .env file in the root directory and add your MySQL username, password, and database name in the following format:
 
 ```bash
-\hr-hub> npm start
+DB_NAME='your_database_name'
+DB_USER='your_mysql_username'
+DB_PW='your_mysql_password'
+```
+5. Create the tables in the database and seed them with test data
+
+```bash
+\TechTapas> npm run seed
 ```
 
-This will start the application and prompt you to answer the required prompts in the command line. 
+6. Start the server
+
+```bash
+\TechTapas> npm start
+```
+5.  to *http://localhost:3001* in your browser to access the site
  
 
 
@@ -111,8 +120,8 @@ This will start the application and prompt you to answer the required prompts in
      <img src="assets\app.gif">
    </div>
    <br />
-   <p align="center"> 
-   <a href="https://drive.google.com/file/d/1oZJElx4QXzcGZlfQwMoUEVd9D6Ld_YKO/view?usp=sharing">Walk Through Video</a>
+   <p align="center"> The deployed site can be found on
+   <a href="https://drive.google.com/file/d/1oZJElx4QXzcGZlfQwMoUEVd9D6Ld_YKO/view?usp=sharing">Heroku</a>
    </p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -158,7 +167,7 @@ MIT
 ## :mag_right: Resources
 
 * [Creating and Selecting a Database](https://dev.mysql.com/doc/refman/8.0/en/creating-database.html)
-* [Creating a Table](https://dev.mysql.com/doc/refman/8.0/en/creating-tables.html)
+* [Handlebars](https://www.npmjs.com/package/handlebars)
 * [Figlet](https://www.npmjs.com/package/figlet)
 * [How To Create Interactive Command-line Prompts with Inquirer.js](https://www.digitalocean.com/community/tutorials/nodejs-interactive-command-line-prompts)
 * [Canva](https://www.canva.com/)
