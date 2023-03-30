@@ -25,3 +25,7 @@ Make sure your repository follows best practices for file structure and naming c
 Commit your changes to your repository regularly and add descriptive commit messages.
 
 Submit your application for grading, including the URL for your deployed application and your GitHub repository.
+
+
+
+have to properly populate the dashboard and main page
