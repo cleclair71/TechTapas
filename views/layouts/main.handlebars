@@ -18,20 +18,12 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                {{#if loggedIn}}
                 <div class="navbar-nav">
-                    <a href="/" class="nav-item nav-link active">Home</a>
-                    <a href="/dashboard" class="nav-item nav-link">Dashboard</a>
-                    <a href="/dashboard/create" class="nav-item nav-link">Create Post</a>
-                    <a href="#" class="nav-item nav-link">Contact</a>
                 </div>
                 <div class="navbar-nav ms-auto">
-                    <a href="/logout" class="nav-item nav-link">Logout</a>
                 </div>
-                {{else}}
                 <a href="/" class="nav-item nav-link active">Home</a>
                 <a href="/login" class="nav-item nav-link">Login</a>
-                {{/if}}
             </div>
         </div>
     </nav>
@@ -48,13 +40,9 @@
                 <p>Copyright &copy; 2023 Cassie LeClair</p>
             </div>
             <div class="col-md-6 text-md-end">
-                <a href="/" class="text-dark">Home</a>{{#if loggedIn}}
                 <span class="text-muted mx-2">|</span>
-                <a href="/dashboard/" class="text-dark">Dashboard</a>
-                <a href="/dashboard/create/" class="text-dark">Create New Post</a>
-                {{else}}
                 | <a href="/login/">login</a>
-                {{/if}}
+
             </div>
         </div>
     </footer>
