@@ -30,9 +30,9 @@ router.get('/', (req, res) => {
     })
         .then(dbPostData => {
             const posts = dbPostData.map(post => post.get({ plain: true }));
-            res.render('homepage', {
-                posts,
-                loggedIn: req.session.loggedIn
+            res.render('allPosts', {
+                posts
+                // loggedIn: req.session.loggedIn
             });
         })
         .catch(err => {
@@ -110,8 +110,8 @@ router.get('/signup', (req, res) => {
     res.render('signup');
 });
 
-router.get('*', (req, res) => {
-    res.render('404').send('404');
-});
+// router.get('*', (req, res) => {
+//     res.render('404').send('404');
+// });
 
 module.exports = router;

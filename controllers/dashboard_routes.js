@@ -88,7 +88,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
         });
 });
 
-router.get('/new', (req, res) => {
+router.get('/create', (req, res) => {
     Post.findAll({
         where: {
             user_id: req.session.user_id
