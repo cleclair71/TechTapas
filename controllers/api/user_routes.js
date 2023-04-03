@@ -53,22 +53,27 @@ router.get('/:id', (req, res) => {
 });
 
 // POST one user
-router.post('/', (req, res) => {
+// POST a new user
+router.post('/api/users', (req, res) => {
     User.create({
-        username: req.body.username,
-        email: req.body.email,
-        password: req.body.password
+      username: req.body.username,
+      email: req.body.email,
+      password: req.body.password
     })
-        .then(dbUserData => {
-            req.session.save(() => {
-                req.session.user_id = dbUserData.id;
-                req.session.username = dbUserData.username;
-                req.session.loggedIn = true;
-
-                res.json(dbUserData);
-            });
+      .then(dbUserData => {
+        req.session.save(() => {
+          req.session.loggedIn = true;
+          req.session.userId = dbUserData.id;
+          req.session.username = dbUserData.username;
+    
+          res.status(200).json(dbUserData);
         });
-});
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  });
 
 // POST login
 router.post('/login', (req, res) => {

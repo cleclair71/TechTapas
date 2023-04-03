@@ -60,7 +60,7 @@ body {
 }
 
 
-  textarea[name="post-content"] {
+  textarea[name="post-text"] {
     height: 300px;
   }
 

@@ -31,19 +31,15 @@ router.get('/', (req, res) => {
             }
         ]
     })
-        .then(dbPostData => {
-            const posts = dbPostData.map(post => post.get({ plain: true }));
-            res.render('dashboard', {
-                posts,
-                loggedIn: req.session.loggedIn
-            });
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-}   
-);
+    .then(dbPostData => {
+        const posts = dbPostData.map(post => post.get({ plain: true }));
+        res.render('dashboard', { posts, loggedIn: true });
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+    });
 
 router.get('/edit/:id', withAuth, (req, res) => {
     Post.findOne({
@@ -75,10 +71,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
             if (dbPostData) {
                 const post = dbPostData.get({ plain: true });
 
-                res.render('edit-post', {
-                    post,
-                    loggedIn: req.session.loggedIn
-                });
+                res.render('edit-post', { post, loggedIn: true });
             } else {
                 res.status(404).end();
             }
@@ -88,17 +81,20 @@ router.get('/edit/:id', withAuth, (req, res) => {
         });
 });
 
-router.get('/new', (req, res) => {
-    Post.findAll({
+router.get('/new', withAuth, (req, res) => {
+    res.render('new-post', { loggedIn: true });
+  });
+
+  router.get('/post/:id', withAuth, (req, res) => {
+    Post.findOne({
         where: {
-            user_id: req.session.user_id
+            id: req.params.id
         },
         attributes: [
             'id',
             'post_text',
             'title',
             'created_at',
-
         ],
         include: [
             {
@@ -117,17 +113,12 @@ router.get('/new', (req, res) => {
     })
 
         .then(dbPostData => {
-            const posts = dbPostData.map(post => post.get({ plain: true }));
-            res.render('new-post', {
-                posts,
-                loggedIn: req.session.loggedIn
-            });
+            const post = dbPostData.get({ plain: true });
+            res.render('single-post', { post, loggedIn: true });
         })
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
-        }
-        );
+        });
 });
-
 module.exports = router;

@@ -1,7 +1,7 @@
 async function createPost(event) {
     event.preventDefault();
     const title = document.querySelector('input[name="post-title"]').value;
-    const content = document.querySelector('input[name="post-content"]').value;
+    const content = document.querySelector('input[name="post-text"]').value;
     if (title && content) {
         const response = await fetch('/api/posts', {
             method: 'POST',
