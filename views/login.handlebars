@@ -1,36 +1,38 @@
- <div class="container">
-            <div class="row loginpage">
-                <div class="col-md-6 loginform">
-                    <div class="form-container">
-                            <h1>Login</h1>
-                            <div class="m-4">
-                                <form action="/examples/actions/confirmation.php" class="needs-validation" method="post"
-                                    novalidate>
-                                    <div class="mb-3">
-                                        <label class="form-label" for="inputEmail">Email</label>
-                                        <input type="email" class="form-control" id="inputEmail" placeholder="Email"
-                                            required>
-                                        <div class="invalid-feedback">Please enter a valid email address.</div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="form-label" for="inputPassword">Password</label>
-                                        <input type="password" class="form-control" id="inputPassword"
-                                            placeholder="Password" required>
-                                        <div class="invalid-feedback">Please enter your password to continue.</div>
-                                    </div>
-                                    <button id="login-form" type="submit" class="btn btn-primary">Sign in</button>
-                                    <div>
-                                        <span>Don't have an account?</span>
-                                        <a href="/signup">Sign up</a>
-                                    </div>
-                                </form>
+<div class="container">
+    <div class="row loginpage">
+        <div class="col-md-6 loginform">
+            <div class="form-container">
+                    <h1>Login</h1>
+                    <div class="m-4">
+                        <form class="login-form">
+                            <div class="mb-3">
+                                <label class="form-label" for="email-login">Email</label>
+                                <input type="email" class="form-control" id="email-login" placeholder="Email"
+                                    required>
+                                <div class="invalid-feedback">Please enter a valid email address.</div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 logingif">
-
-                        <video src="./assets/techgif.mp4" autoplay loop class="img-fluid"></video>
+                            <div class="mb-3">
+                                <label class="form-label" for="password-login">Password</label>
+                                <input type="password" class="form-control" id="password-login"
+                                    placeholder="Password" required>
+                                <div class="invalid-feedback">Please enter your password to continue.</div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Sign in</button>
+                            <div>
+                                <span>Don't have an account?</span>
+                                <a href="/signup">Sign up</a>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
+
+            <div class="col-md-6 logingif">
+
+                <video src="./assets/techgif.mp4" autoplay loop class="img-fluid"></video>
+            </div>
         </div>
+    </div>
+</div>
+
+<script src="/js/login.js"></script>

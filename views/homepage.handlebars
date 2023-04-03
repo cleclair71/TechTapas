@@ -1,3 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a href="/" class="navbar-brand"><img src="./assets/navlogo.png" height="100" alt="TECHTAPAS"></a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <p>{{LoggedIn}}</p>
+
+            {{#if LoggedIn}}
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav">
+                    <a href="/" class="nav-item nav-link active">Home</a>
+                    <a href="/dashboard" class="nav-item nav-link">Dashboard</a>
+                    <a href="/dashboard/create" class="nav-item nav-link">Create Post</a>
+                    <a href="#" class="nav-item nav-link">Contact</a>
+                </div>
+                <div class="navbar-nav ms-auto">
+                    <a href="/logout" class="nav-item nav-link">Logout</a>
+                </div>
+            </div>
+            {{else}}
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav"></div>
+                <div class="navbar-nav ms-auto"></div>
+                <a href="/" class="nav-item nav-link active">Home</a>
+                <a href="/login" class="nav-item nav-link">Login</a>
+            </div>
+            {{/if}}
+        </div>
+</nav>
+
+
+
 <div class="container my-5 border rounded p-4 bg-dark text-light">
   <div class="d-flex justify-content-between align-items-center">
     <h2 class="fw-bold text-primary mb-0">Dashboard: Your Posts</h2>
@@ -21,3 +54,17 @@
     </div>
   {{/if}}
 </div>
+
+<hr>
+    
+    <footer>
+        <div class="row">
+            <div class="col-md-6">
+                <p>Copyright &copy; 2023 Cassie LeClair</p>
+            </div>
+        </div>
+    </footer>
+
+    {{#if LoggedIn}}
+    <script src="./js/logout.js"></script>
+    {{/if}}
