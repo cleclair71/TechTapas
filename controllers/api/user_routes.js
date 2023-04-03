@@ -54,7 +54,7 @@ router.get('/:id', (req, res) => {
 
 // POST one user
 // POST a new user
-router.post('/api/users', (req, res) => {
+router.post('/', (req, res) => {
     User.create({
       username: req.body.username,
       email: req.body.email,
@@ -74,6 +74,8 @@ router.post('/api/users', (req, res) => {
         res.status(500).json(err);
       });
   });
+  // add error handling for duplicate email
+
 
 // POST login
 router.post('/login', (req, res) => {
